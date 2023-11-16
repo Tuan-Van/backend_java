@@ -1,0 +1,57 @@
+package com.gmail.merikbest.ecommerce.dto.perfume;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import lombok.Data;
+import org.hibernate.validator.constraints.Length;
+
+import static com.gmail.merikbest.ecommerce.constants.ErrorMessage.*;
+
+@Data
+public class PerfumeRequest {
+
+    private Long id;
+    private String filename;
+
+    @NotBlank(message = FILL_IN_THE_INPUT_FIELD)
+    @Length(max = 255)
+    private String perfumeTitle;
+
+    @NotBlank(message = FILL_IN_THE_INPUT_FIELD)
+    @Length(max = 255)
+    private String perfume;
+
+    @NotNull(message = FILL_IN_THE_INPUT_FIELD)
+    private Integer year;
+
+    @NotBlank(message = FILL_IN_THE_INPUT_FIELD)
+    @Length(max = 255)
+    private String country;
+
+    @NotBlank(message = FILL_IN_THE_INPUT_FIELD)
+    @Length(max = 255)
+    private String perfumeGender;
+
+    @NotBlank(message = FILL_IN_THE_INPUT_FIELD)
+    @Length(max = 255)
+    private String fragranceTopNotes;
+
+    @NotBlank(message = FILL_IN_THE_INPUT_FIELD)
+    @Length(max = 255)
+    private String fragranceMiddleNotes;
+
+    @NotBlank(message = FILL_IN_THE_INPUT_FIELD)
+    @Length(max = 255)
+    private String fragranceBaseNotes;
+
+    @NotNull(message = FILL_IN_THE_INPUT_FIELD)
+    private Integer price;
+
+    @NotBlank(message = FILL_IN_THE_INPUT_FIELD)
+    @Length(max = 255)
+    private String volume;
+
+    @NotBlank(message = FILL_IN_THE_INPUT_FIELD)
+    @Length(max = 255)
+    private String type;
+}
